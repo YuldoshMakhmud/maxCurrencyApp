@@ -16,7 +16,7 @@ class SplashPage extends StatelessWidget {
         if(snapshot.hasError){
           return Text(snapshot.error.toString());
         }
-      return Lottie.asset(LottieAssets.splash);
+      return Center(child: Lottie.asset(LottieAssets.splash));
      },),
     );
   }
