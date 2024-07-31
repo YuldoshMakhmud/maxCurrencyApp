@@ -20,7 +20,7 @@ class ItemCard extends StatelessWidget{
       margin: const EdgeInsets.symmetric(vertical: 10,horizontal: 20),
       child: Row(
         children: [
-          CircleAvatar(
+        const  CircleAvatar(
       radius: 35, // Adjust the radius as needed
       backgroundImage: NetworkImage(
           "https://flagsapi.com/AED/flat/64.png"),
@@ -34,7 +34,7 @@ class ItemCard extends StatelessWidget{
         Text(title, style: const TextStyle(fontSize: 15, ),)
       ]
       ),
-      Spacer(),
+     const  Spacer(),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.end,

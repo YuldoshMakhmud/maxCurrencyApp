@@ -1,6 +1,7 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:maxcurrencyapp/model/currency_model.dart';
+import 'package:maxcurrencyapp/screens/widgets/exchanger_page.dart';
 import 'package:maxcurrencyapp/screens/widgets/item_card.dart';
 
 class HomePage extends StatelessWidget {
@@ -27,7 +28,7 @@ class HomePage extends StatelessWidget {
                   return Container(
                     padding: const EdgeInsets.all(15),
                     decoration: BoxDecoration(
-                    image: DecorationImage(image: NetworkImage("https://flagsapi.com/${currencyData[index].code!}/flat/64.png")),
+                    image: const DecorationImage(image: NetworkImage("https://flagsapi.com//flat/64.png")),
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(15)
                     ),
@@ -36,9 +37,13 @@ class HomePage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                              Text("${currencyData[index].code} - ${currencyData[index].title}",style: const TextStyle(fontSize: 25),),
-                           const  Padding(
+                            Padding(
                                padding:  EdgeInsets.all(10.0),
-                               child: Icon(Icons.currency_exchange,size: 40,),
+                               child: ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=> ExchengerPage()));
+                                },
+                                child: const Icon(Icons.currency_exchange,size: 40,)),
                              ),
                              Text(" ${currencyData[index].cbPrice} Uzbek Sum",style: const TextStyle(fontSize: 25))
                           ],
@@ -55,7 +60,7 @@ class HomePage extends StatelessWidget {
             Expanded(
               flex: 6,
               child: Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(topLeft: Radius.circular(25),topRight: Radius.circular(25)),
                 color: Colors.white,
                 ),
@@ -67,6 +72,7 @@ class HomePage extends StatelessWidget {
                   title: currencyData[index].title.toString());
               }),
               ),
+              
               ),
         ],
         ),
