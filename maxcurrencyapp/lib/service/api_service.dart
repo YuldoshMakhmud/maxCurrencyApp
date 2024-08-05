@@ -9,6 +9,7 @@ class ApiService{
       Response res = await Dio().get("https://nbu.uz/uz/exchange-rates/json/");
       List<CurrencyModel> list =(res.data as List).map((e) => CurrencyModel.fromJson(e)).toList();
       Navigator.pushNamedAndRemoveUntil(context, ConverterRouteNmaes.home, (Route<dynamic> route) => false, arguments: list);
+      
     }catch(e){
       print("Error: $e");
     }

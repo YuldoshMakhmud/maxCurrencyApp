@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:maxcurrencyapp/core/resource/resource.dart';
 import 'package:maxcurrencyapp/model/currency_model.dart';
 
 
 
 
+
 class ItemCard extends StatelessWidget{
- const ItemCard({super.key, required this.currencyData, required this.title ,required this.countryCode, required this.price, required String flagUrl});
+ const ItemCard( {super.key, required this.currencyData, required this.title ,required this.countryCode, required this.price, });
    final List<CurrencyModel> currencyData;
   final String countryCode;
   final String title;
@@ -18,7 +20,7 @@ class ItemCard extends StatelessWidget{
 
   Widget build(BuildContext context){
     return Container(
-      padding:const EdgeInsets.all(15),
+      padding:const EdgeInsets.all(10),
       decoration: const BoxDecoration(color: Colors.white,
       borderRadius: BorderRadius.all(Radius.circular(10))
       ),
@@ -26,7 +28,11 @@ class ItemCard extends StatelessWidget{
       margin: const EdgeInsets.symmetric(vertical: 10,horizontal: 20),
       child: Row(
         children: [
-        const  CircleAvatar(
+         CircleAvatar(
+          backgroundImage: NetworkImage(
+            "  https://flagcdn.com/256x192/.png"
+
+          ),
       radius: 35, // Adjust the radius as needed
     ),
        const   SizedBox(width: 20,),
@@ -47,7 +53,8 @@ class ItemCard extends StatelessWidget{
         const Text("1 Uzbek Sum", style:  TextStyle(fontSize: 15, ),)
       ]
       )
-      ],),
+      ],
+      ),
       
     );
   }

@@ -1,4 +1,4 @@
-import 'package:flutter/src/material/dropdown.dart';
+import 'dart:convert';
 
 class CurrencyModel {
     String? title;
@@ -29,6 +29,14 @@ class CurrencyModel {
         date: json["date"],
     
     );
+    // To parse this JSON data, do
+//
+//     final currencyModel = currencyModelFromJson(jsonString);
 
-  static map(DropdownMenuItem<String> Function(String value) param0) {}
+
+Map<String, String> currencyModelFromJson(String str) => Map.from(json.decode(str)).map((k, v) => MapEntry<String, String>(k, v));
+
+String currencyModelToJson(Map<String, String> data) => json.encode(Map.from(data).map((k, v) => MapEntry<String, dynamic>(k, v)));
+
+
 }
