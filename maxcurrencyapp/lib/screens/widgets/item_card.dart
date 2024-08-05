@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:maxcurrencyapp/core/resource/resource.dart';
 import 'package:maxcurrencyapp/model/currency_model.dart';
 
 
@@ -20,7 +19,7 @@ class ItemCard extends StatelessWidget{
 
   Widget build(BuildContext context){
     return Container(
-      padding:const EdgeInsets.all(10),
+      padding:const EdgeInsets.all(1),
       decoration: const BoxDecoration(color: Colors.white,
       borderRadius: BorderRadius.all(Radius.circular(10))
       ),
@@ -33,7 +32,7 @@ class ItemCard extends StatelessWidget{
             "  https://flagcdn.com/256x192/.png"
 
           ),
-      radius: 35, // Adjust the radius as needed
+      radius: 35, 
     ),
        const   SizedBox(width: 20,),
         Column(
