@@ -1,4 +1,5 @@
 String LOTTIE_PATH = 'assets/lottie';
+String? IMAGE_URL;
 
 
 class LottieAssets{

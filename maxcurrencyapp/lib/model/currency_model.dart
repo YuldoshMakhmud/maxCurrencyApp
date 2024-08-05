@@ -1,3 +1,5 @@
+import 'package:flutter/src/material/dropdown.dart';
+
 class CurrencyModel {
     String? title;
     String? code;
@@ -5,6 +7,7 @@ class CurrencyModel {
     String? nbuBuyPrice;
     String? nbuCellPrice;
     String? date;
+    String? flagUrl;
 
     CurrencyModel({
         required this.title,
@@ -13,6 +16,8 @@ class CurrencyModel {
         required this.nbuBuyPrice,
         required this.nbuCellPrice,
         required this.date,
+ 
+        
     });
 
     factory CurrencyModel.fromJson(Map<String, dynamic> json) => CurrencyModel(
@@ -22,5 +27,8 @@ class CurrencyModel {
         nbuBuyPrice: json["nbu_buy_price"],
         nbuCellPrice: json["nbu_cell_price"],
         date: json["date"],
+    
     );
+
+  static map(DropdownMenuItem<String> Function(String value) param0) {}
 }
